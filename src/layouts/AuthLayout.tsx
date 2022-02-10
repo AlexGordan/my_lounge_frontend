@@ -16,7 +16,11 @@ const AuthLayout = ({ children }: IProps) => {
     <AuthContainer>
       <Layout className="layout">
         <Header>
-          <CustomMenu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
+          <CustomMenu
+            theme="dark"
+            mode="horizontal"
+            defaultSelectedKeys={["2"]}
+          >
             <Menu.Item>
               <Typography.Link onClick={() => navigate("/signup")}>
                 Signup
@@ -29,9 +33,18 @@ const AuthLayout = ({ children }: IProps) => {
             </Menu.Item>
           </CustomMenu>
         </Header>
-        <Content style={{ padding: "0 50px" }}>{children}</Content>
+        <Content
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "0 50px",
+          }}
+        >
+          {children}
+        </Content>
         <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
+          Ant Design ©{new Date().getFullYear()} Created by Ant UED
         </Footer>
       </Layout>
     </AuthContainer>
